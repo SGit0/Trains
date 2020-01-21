@@ -27,8 +27,8 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `gare`
 --
-CREATE DATABASE 'gestion-trains'
-USE 'gestion_trains'
+CREATE DATABASE 'gestion-trains';
+USE 'gestion_trains';
 
 CREATE TABLE `gare` (
   `ID_gare` int(10) NOT NULL,
