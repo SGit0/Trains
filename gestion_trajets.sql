@@ -1,7 +1,7 @@
-CREATE DATABASE gestion_trains;
+CREATE DATABASE IF NOT EXISTS gestion_trains;
 USE gestion_trains;
 
-CREATE TABLE `gare` (
+CREATE TABLE IF NOT EXISTS `gare` (
   `ID_gare` int(10) NOT NULL,
   `nom_gare` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -16,7 +16,7 @@ CREATE TABLE `tgv` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE `trajet` (
+CREATE TABLE IF NOT EXISTS `trajet` (
   `ID_trajet` int(10) NOT NULL,
   `date_depart` date NOT NULL,
   `date_arrivee` date NOT NULL,
