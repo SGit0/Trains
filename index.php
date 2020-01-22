@@ -4,7 +4,7 @@ include "param.php";
 
 // C'est la meilleur façon d'exécuter une requête SQL
 // Pour plus d'exemples, voir mysql_real_escape_string()
-$query = "select ID_TGV as  tid , gd.nom_gare  as  ngd , ga.nom_gare as nga, heure_depart, heure_arrivee
+$query = "select ID_TGV as tid , gd.nom_gare  as  ngd , ga.nom_gare as nga, heure_depart, heure_arrivee
 from tgv t, gare gd, gare ga
 where t.gare_depart=gd.ID_GARE and t.gare_arrivee=ga.ID_GARE";
 
