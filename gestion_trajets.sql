@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `gare` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE `tgv` (
+CREATE TABLE IF NOT EXISTS `tgv` (
   `ID-TGV` int(10) NOT NULL,
   `gare_depart` int(10) NOT NULL,
   `gare_arrivee` int(10) NOT NULL,
