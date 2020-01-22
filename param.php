@@ -1,6 +1,6 @@
 <?php
 
-$server="10.69.8.79";
+$server="localhost";
 $user="admin";
 $pass="password";
 $db="gestion_trajets";
