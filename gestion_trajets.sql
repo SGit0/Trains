@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS gestion_trains;
-USE gestion_trains;
+CREATE DATABASE IF NOT EXISTS gestion_trajets;
+USE gestion_trajets;
 
 CREATE TABLE IF NOT EXISTS `gare` (
   `ID_gare` int(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
