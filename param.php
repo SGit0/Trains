@@ -1,13 +1,13 @@
 <?php
 
-$server="localhost";
+$server="10.69.8.79";
 $user="admin";
 $pass="password";
-$db="gestion_trains";
+$db="gestion_trajets";
 
 
 
-$link = mysql_connect($server , $user, $pass);
+$link = mysqli_connect($server , $user, $pass);
 if (!$link) {
    die('Impossible de se connecter : ' . mysql_error());
 }

@@ -8,11 +8,11 @@ CREATE TABLE IF NOT EXISTS `gare` (
 
 
 CREATE TABLE IF NOT EXISTS `tgv` (
-  `ID-TGV` int(10) NOT NULL,
+  `ID_TGV` int(10) NOT NULL,
   `gare_depart` int(10) NOT NULL,
   `gare_arrivee` int(10) NOT NULL,
   `heure_depart` date NOT NULL,
-  `heure-arrivee` date NOT NULL
+  `heure_arrivee` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -28,7 +28,7 @@ ALTER TABLE `gare`
   ADD PRIMARY KEY (`ID_gare`);
 
 ALTER TABLE `tgv`
-  ADD PRIMARY KEY (`ID-TGV`),
+  ADD PRIMARY KEY (`ID_TGV`),
   ADD KEY `gareariv` (`gare_arrivee`),
   ADD KEY `garedep` (`gare_depart`);
 
@@ -40,7 +40,7 @@ ALTER TABLE `gare`
   MODIFY `ID_gare` int(10) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `tgv`
-  MODIFY `ID-TGV` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_TGV` int(10) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `trajet`
   MODIFY `ID_trajet` int(10) NOT NULL AUTO_INCREMENT;
@@ -50,6 +50,6 @@ ALTER TABLE `tgv`
   ADD CONSTRAINT `garedep` FOREIGN KEY (`gare_depart`) REFERENCES `gare` (`ID_gare`);
 
 ALTER TABLE `trajet`
-  ADD CONSTRAINT `TGV` FOREIGN KEY (`ID_TGV`) REFERENCES `tgv` (`ID-TGV`);
+  ADD CONSTRAINT `TGV` FOREIGN KEY (`ID_TGV`) REFERENCES `tgv` (`ID_TGV`);
 COMMIT;
 
