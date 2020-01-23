@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dbdeployment
+  name: db
   labels:
-    app: db
+    app: dbdeployment
 spec:
   replicas: 1
   selector:
