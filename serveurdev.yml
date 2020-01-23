@@ -1,0 +1,76 @@
+---
+- hosts: serveurdev
+  vars:
+    http_port: 80
+  remote_user: root
+  tasks:
+
+  - name: install git
+    yum:
+      name: git
+      state: latest
+
+  - name: copy files
+    git:
+      repo: 'https://github.com/SGit0/Trains'
+      version: dev
+      dest: /var/www/html
+      force: yes
+
+  - name: Install MySQL Database and MySQL-python
+    yum: name={{ item }} state=present
+    with_items:
+     - mariadb-server
+     - MySQL-python
+
+  - name: Start & Enable MySQL Server to start on boot
+    service: name=mariadb state=started enabled=yes
+
+  - name: ensure apache is at the latest version
+    yum:
+      name: httpd
+      state: latest
+
+  - name: install php
+    yum:
+      name: php
+      state: latest
+
+  - name: install php mysql driver
+    yum:
+      name: php-mysql.x86_64
+      state: latest
+
+  - name: ensure apache is running
+    service:
+      name: httpd
+      state: restarted
+
+  - name: intiate new user "admin" with all database privileges
+    mysql_user:
+      host: 'localhost'
+      name: admin
+      password: password
+      priv: '*.*:ALL'
+      state: present
+
+  - name: intiate new user "admin" with all database privileges
+    mysql_user:
+      host: '%'
+      name: admin
+      password: password
+      priv: '*.*:ALL'
+      state: present
+
+  - name: Import gestion_trajets.sql 
+    mysql_db:
+      state: import
+      name: all
+      login_user: admin
+      login_password: password
+      target: /var/www/html/gestion_trajets.sql
+
+
+
+
+
