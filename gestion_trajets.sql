@@ -6,7 +6,6 @@ CREATE TABLE IF NOT EXISTS `gare` (
   `nom_gare` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
 CREATE TABLE IF NOT EXISTS `tgv` (
   `ID_TGV` int(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `gare_depart` int(10) NOT NULL REFERENCES gare(ID_GARE),
@@ -14,7 +13,6 @@ CREATE TABLE IF NOT EXISTS `tgv` (
   `heure_depart` date NOT NULL,
   `heure_arrivee` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 CREATE TABLE IF NOT EXISTS `trajet` (
   `ID_trajet` int(10) NOT NULL,
